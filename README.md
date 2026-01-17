@@ -9,6 +9,33 @@ This project focuses on predicting the "virality" of online news articles (wheth
 ## 👥 Team Members (Team 5)
 - Doyoon Kim, Minha Woo, Yeeun Kim, Jiwon Lee
 
+### 👤 My Contributions (Jiwon Lee)
+I led the critical data preprocessing logic and final model optimization to ensure robust performance.
+
+#### **1. Sophisticated Data Imputation Strategy**
+* [cite_start]**Logic Design**: Developed the entire missing value handling hierarchy based on statistical analysis. [cite: 358, 501]
+* [cite_start]**Regression Imputation**: Implemented Linear and Polynomial regression to fill missing values for highly correlated variable pairs ($r > 0.7$). [cite: 362, 365, 460]
+
+![Correlations of Variables](./IMAGES/correlations_plot.png)
+
+* [cite_start]**Triple-Variable Dependency Analysis**: Analyzed complex conditional relationships between `n_non_stop_words`, `n_non_stop_unique_tokens`, and `average_token_length` to derive custom imputation logic. [cite: 463, 468, 564]
+
+![Special Relationship of Three Varisbles](./IMAGES/relationship_3_variables.png)
+
+* [cite_start]**Skewness-based Filling**: Applied mean/median imputation selectively based on the skewness of variables without strong correlations. [cite: 399, 401, 402]
+
+#### **2. Advanced Outlier Management**
+* [cite_start]**DBSCAN Clustering**: Conducted density-based outlier detection using scatterplots of highly correlated variables to replace anomalies with the nearest normal points. [cite: 1144, 1146, 1147]
+
+![DBSCAN](./IMAGES/DBSCAN.png)
+
+* [cite_start]**Quantile Approach**: Replaced the naive IQR method with a 5%/95% Quantile-based clipping strategy after analyzing skewed data distributions. [cite: 1267, 1269]
+
+#### **3. Model Tuning & Optimization**
+* [cite_start]**Individual Model Tuning**: Executed a three-stage optimization (Randomized Search → Grid Search → Bayesian Optimization) for Decision Tree and Random Forest models. [cite: 783, 815, 847]
+* [cite_start]**Stacking Ensemble & Meta-Tuning**: Developed and manually tuned a Stacking model using CatBoost, Random Forest, and XGBoost as base models with a Logistic Regression meta-model. [cite: 1016, 1028, 1137]
+* [cite_start]**Final Threshold Optimization**: Performed threshold tuning (range 0.40–0.60) to find the optimal cutoff (0.44), resulting in a final Mean Score of 0.6955. [cite: 1346, 1347, 1356]
+
 ## 🎯 Project Objective
 - **Goal**: Build a binary classification model to predict news popularity.
 - **Target Variable**: `y=1` (Popular, >1,400 shares), `y=0` (Not popular)
@@ -29,9 +56,3 @@ This project focuses on predicting the "virality" of online news articles (wheth
 ## 📂 Project Structure
 - **[FINAL CODES](./FINAL%20CODES)**: Final Python source code for preprocessing and modeling (`code.ipynb`).
 - **[REPORTS](./REPORTS)**: Detailed project report and presentation slides (`report.pdf`, `PPT.pdf`).
-
-## 📈 Key Visuals
-*(I recommend inserting the following images here for maximum impact)*
-1. **DBSCAN Clustering Plot**: To showcase your advanced outlier detection skills.
-2. **Correlation Heatmap**: To justify your regression-based imputation strategy.
-3. **Model Performance Comparison**: To highlight the superiority of the Stacking model.
