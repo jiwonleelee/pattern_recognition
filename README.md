@@ -32,9 +32,9 @@ I led the critical data preprocessing logic and final model optimization to ensu
 **Quantile Approach**: Replaced the naive IQR method with a 5%/95% Quantile-based clipping strategy after analyzing skewed data distributions.
 
 #### **3. Model Tuning & Optimization**
-**Individual Model Tuning**: Executed a three-stage optimization (Randomized Search → Grid Search → Bayesian Optimization) for Decision Tree and Random Forest models.
-**Stacking Ensemble & Meta-Tuning**: Developed and manually tuned a Stacking model using CatBoost, Random Forest, and XGBoost as base models with a Logistic Regression meta-model. 
-**Final Threshold Optimization**: Performed threshold tuning (range 0.40–0.60) to find the optimal cutoff (0.44), resulting in a final Mean Score of 0.6955.
+- **Individual Model Tuning**: Executed a three-stage optimization (Randomized Search → Grid Search → Bayesian Optimization) for Decision Tree and Random Forest models.
+- **Stacking Ensemble & Meta-Tuning**: Developed and manually tuned a Stacking model using CatBoost, Random Forest, and XGBoost as base models with a Logistic Regression meta-model. 
+- **Final Threshold Optimization**: Performed threshold tuning (range 0.40–0.60) to find the optimal cutoff (0.44), resulting in a final Mean Score of 0.6955.
 
 ## 🎯 Project Objective
 - **Goal**: Build a binary classification model to predict news popularity.
