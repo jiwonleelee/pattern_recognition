@@ -1,5 +1,5 @@
 # 📰 Online News Popularity Prediction
-> **Selected as an Outstanding Project** in the Pattern Recognition course at Ewha Womans University.
+> **Selected as an Outstanding Project** in the 2025-1 Pattern Recognition course at Ewha Womans University.
 
 This project focuses on predicting the "virality" of online news articles (whether an article exceeds 1,400 shares) by analyzing various features of the content. Our team achieved high predictive performance through advanced data preprocessing and ensemble modeling.
 
